@@ -1,6 +1,8 @@
+import 'package:amrita_ayurvedic_app/core/constants/app_assets.dart';
 import 'package:amrita_ayurvedic_app/core/constants/home_constants.dart';
 import 'package:amrita_ayurvedic_app/core/themes/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ListViewWidget extends StatelessWidget {
   // final List<PatientEntity> entity;
@@ -10,12 +12,13 @@ class ListViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final constants = HomeConstants();
+    final appAssets = AppAssetsConstants();
 
     return SizedBox(
       height: MediaQuery.sizeOf(context).height / 1.3,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 3,
+        itemCount: 5,
         // itemCount: entity.length,
         itemBuilder: (context, index) {
           return Padding(
@@ -24,89 +27,113 @@ class ListViewWidget extends StatelessWidget {
               vertical: theme.spaces.space_150,
             ),
             child: Container(
-                height: theme.spaces.space_500 * 5,
+                height: theme.spaces.space_500 * 4,
                 decoration: BoxDecoration(
-                  color: theme.colors.textInverse,
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: theme.spaces.space_300,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: theme.spaces.space_200,
-                      ),
-                      Text(
+                    color: theme.colors.textInverse,
+                    borderRadius:
+                        BorderRadius.circular(theme.spaces.space_150)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: theme.spaces.space_200,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: theme.spaces.space_200),
+                      child: Text(
                         "1.  user",
                         // entity[index].user,
                         style: theme.typography.h500.copyWith(
                           fontSize: theme.spaces.space_250,
                         ),
                       ),
-                      Text(
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsets.only(left: theme.spaces.space_300 * 1.8),
+                      child: Text(
                         "Couple combo package(Rajee)",
                         // entity[index].address,
-                        style: theme.typography.h300.copyWith(
-                          fontSize: theme.spaces.space_25git0,
+                        style: theme.typography.h400.copyWith(
+                          fontSize: theme.spaces.space_250,
                           color: theme.colors.primary,
                         ),
                       ),
-                      SizedBox(
-                        height: theme.spaces.space_150,
-                      ),
-                      Row(
+                    ),
+                    SizedBox(
+                      height: theme.spaces.space_150,
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsets.only(left: theme.spaces.space_300 * 1.8),
+                      child: Row(
                         children: [
-                          Icon(
-                            Icons.calendar_month,
-                            color: theme.colors.textSubtlest,
+                          SvgPicture.asset(appAssets.icCalendar,
+                              width: theme.spaces.space_250,
+                              // ignore: deprecated_member_use
+                              color: theme.colors.textSubtlest),
+                          SizedBox(
+                            width: theme.spaces.space_100,
                           ),
                           Text(
-                            "name", // entity[index].name,
-                            style: theme.typography.h300.copyWith(
-                              fontSize: theme.spaces.space_250,
+                            "31/01/2024", // entity[index].name,
+                            style: theme.typography.h500.copyWith(
+                              fontSize: theme.spaces.space_200,
                               color: theme.colors.textSubtle,
                             ),
                           ),
                           SizedBox(
-                            width: theme.spaces.space_200,
+                            width: theme.spaces.space_250,
                           ),
-                          Icon(
-                            Icons.group,
+                          SvgPicture.asset(
+                            appAssets.icUsers,
+                            width: theme.spaces.space_250,
+                            // ignore: deprecated_member_use
                             color: theme.colors.textSubtlest,
                           ),
+                          SizedBox(
+                            width: theme.spaces.space_100,
+                          ),
                           Text(
-                            "name",
+                            "Jithesh",
                             // entity[index].name,
-                            style: theme.typography.h300.copyWith(
-                              fontSize: theme.spaces.space_250,
+                            style: theme.typography.h500.copyWith(
+                              fontSize: theme.spaces.space_200,
                               color: theme.colors.textSubtle,
                             ),
                           ),
                         ],
                       ),
-                      const Divider(),
-                      SizedBox(
-                        height: theme.spaces.space_100,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    ),
+                    const Divider(),
+                    SizedBox(
+                      height: theme.spaces.space_25,
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsets.only(left: theme.spaces.space_300 * 1.8),
+                      child: Row(
                         children: [
                           Text(
                             constants.txtViewBooking,
-                            style: theme.typography.h300.copyWith(
-                              fontSize: theme.spaces.space_125 * 2,
+                            style: theme.typography.h400.copyWith(
+                              fontSize: theme.spaces.space_200,
                             ),
                           ),
-                          Icon(
-                            Icons.chevron_right,
-                            color: theme.colors.primary,
+                          SizedBox(
+                            width: theme.spaces.space_400 * 4.4,
                           ),
+                          InkWell(
+                            child: SvgPicture.asset(
+                              appAssets.icArrowForward,
+                              width: theme.spaces.space_300,
+                            ),
+                            onTap: () {},
+                          )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 )),
           );
         },

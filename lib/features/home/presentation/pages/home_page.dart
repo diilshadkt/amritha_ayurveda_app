@@ -134,46 +134,52 @@ class HomePage extends StatelessWidget {
             ),
             // Listview widget
             Container(
-              height: 500,
-              color: Colors.amber,
+              height: 620,
               child: ListViewWidget(),
             ),
-
-            // ContainerWidget(
-            //   text: constants.txtShowBranches,
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => const BranchPage(),
-            //       ),
-            //     );
-            //   },
-            // ),
-            // ContainerWidget(
-            //   text: constants.txtShowTreatments,
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => const TreatmentPage(),
-            //       ),
-            //     );
-            //   },
-            // ),
-            SizedBox(
-              height: theme.spaces.space_200,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: theme.spaces.space_300),
-              child: Text(
-                constants.txtPatientDetails,
-                style: theme.typography.h600.copyWith(
-                  fontSize: theme.spaces.space_250,
-                ),
+          ],
+        ),
+      ),
+      // Register Button
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: ButtonWidget(
+          buttonName: constants.txtRegister,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const RegistrationPage(),
               ),
-            ),
-            // FutureBuilder(
+            );
+          }),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // FutureBuilder(
             //   future: context.watch<PatientProvider>().getPatient(),
             //   builder: (context, snapshot) {
             //     if (snapshot.hasData) {
@@ -197,20 +203,3 @@ class HomePage extends StatelessWidget {
             //     );
             //   },
             // )
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: ButtonWidget(
-          buttonName: constants.txtRegister,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const RegistrationPage(),
-              ),
-            );
-          }),
-    );
-  }
-}

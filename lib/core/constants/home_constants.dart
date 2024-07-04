@@ -1,7 +1,7 @@
 class HomeConstants {
   final String txtHome = 'Home';
   final String txtSearchField = 'Search for treatment';
-  final String txtViewBooking = 'View Booking Details';
+  final String txtViewBooking = 'View Booking details';
   final String txtRegister = 'Register Now';
   final String txtName = 'Name';
   final String txtNumber = 'Whatsapp Number';
