@@ -10,7 +10,7 @@ class ListViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     final constants = HomeConstants();
-    
+
     return SizedBox(
       height: MediaQuery.sizeOf(context).height / 1.3,
       child: ListView.builder(
@@ -39,17 +39,17 @@ class ListViewWidget extends StatelessWidget {
                         height: theme.spaces.space_200,
                       ),
                       Text(
-                        "user",
+                        "1.  user",
                         // entity[index].user,
-                        style: theme.typography.h600.copyWith(
-                          fontSize: theme.spaces.space_300,
+                        style: theme.typography.h500.copyWith(
+                          fontSize: theme.spaces.space_250,
                         ),
                       ),
                       Text(
-                        "address",
+                        "Couple combo package(Rajee)",
                         // entity[index].address,
-                        style: theme.typography.h400.copyWith(
-                          fontSize: theme.spaces.space_300,
+                        style: theme.typography.h300.copyWith(
+                          fontSize: theme.spaces.space_25git0,
                           color: theme.colors.primary,
                         ),
                       ),
@@ -63,7 +63,7 @@ class ListViewWidget extends StatelessWidget {
                             color: theme.colors.textSubtlest,
                           ),
                           Text(
-                            "name",                            // entity[index].name,
+                            "name", // entity[index].name,
                             style: theme.typography.h300.copyWith(
                               fontSize: theme.spaces.space_250,
                               color: theme.colors.textSubtle,

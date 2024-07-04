@@ -6,6 +6,7 @@ import 'package:amrita_ayurvedic_app/features/home/presentation/pages/branch_pag
 import 'package:amrita_ayurvedic_app/features/home/presentation/pages/registration_page.dart';
 import 'package:amrita_ayurvedic_app/features/home/presentation/pages/treatment_page.dart';
 import 'package:amrita_ayurvedic_app/features/home/presentation/widgets/container_widget.dart';
+import 'package:amrita_ayurvedic_app/features/home/presentation/widgets/listview_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -127,29 +128,39 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            Divider(
+              color: theme.colors.textSubtle,
+              thickness: 1,
+            ),
+            // Listview widget
+            Container(
+              height: 500,
+              color: Colors.amber,
+              child: ListViewWidget(),
+            ),
 
-            ContainerWidget(
-              text: constants.txtShowBranches,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BranchPage(),
-                  ),
-                );
-              },
-            ),
-            ContainerWidget(
-              text: constants.txtShowTreatments,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const TreatmentPage(),
-                  ),
-                );
-              },
-            ),
+            // ContainerWidget(
+            //   text: constants.txtShowBranches,
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => const BranchPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
+            // ContainerWidget(
+            //   text: constants.txtShowTreatments,
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => const TreatmentPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
             SizedBox(
               height: theme.spaces.space_200,
             ),
