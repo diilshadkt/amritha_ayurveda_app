@@ -2,16 +2,10 @@ import 'package:amrita_ayurvedic_app/core/constants/app_assets.dart';
 import 'package:amrita_ayurvedic_app/core/constants/home_constants.dart';
 import 'package:amrita_ayurvedic_app/core/themes/app_theme.dart';
 import 'package:amrita_ayurvedic_app/core/widgets/button_widget.dart';
-import 'package:amrita_ayurvedic_app/features/home/presentation/pages/branch_page.dart';
 import 'package:amrita_ayurvedic_app/features/home/presentation/pages/registration_page.dart';
-import 'package:amrita_ayurvedic_app/features/home/presentation/pages/treatment_page.dart';
-import 'package:amrita_ayurvedic_app/features/home/presentation/widgets/container_widget.dart';
 import 'package:amrita_ayurvedic_app/features/home/presentation/widgets/listview_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -98,7 +92,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: theme.spaces.space_300,
-                  vertical: theme.spaces.space_300),
+                  vertical: theme.spaces.space_250),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -107,8 +101,8 @@ class HomePage extends StatelessWidget {
                     style: theme.typography.h500,
                   ),
                   Container(
-                    height: theme.spaces.space_400 * 1.4,
-                    width: theme.spaces.space_300 * 6.5,
+                    height: theme.spaces.space_400 * 1.2,
+                    width: theme.spaces.space_300 * 6.8,
                     decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.circular(theme.spaces.space_400),
