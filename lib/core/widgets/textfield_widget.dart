@@ -28,11 +28,14 @@ class TextFieldWidget extends StatelessWidget {
           suffixIcon: icon,
           labelStyle: TextStyle(color: colors.textSubtle),
           border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(
               color: colors.textInverse,
               width: 0.1,
             ),
+            
           ),
+          
         ),
       ),
     );
