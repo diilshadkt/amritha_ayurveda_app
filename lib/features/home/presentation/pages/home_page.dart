@@ -3,9 +3,11 @@ import 'package:amrita_ayurvedic_app/core/constants/home_constants.dart';
 import 'package:amrita_ayurvedic_app/core/themes/app_theme.dart';
 import 'package:amrita_ayurvedic_app/core/widgets/button_widget.dart';
 import 'package:amrita_ayurvedic_app/features/home/presentation/pages/registration_page.dart';
+import 'package:amrita_ayurvedic_app/features/home/presentation/provider/patient_provider.dart';
 import 'package:amrita_ayurvedic_app/features/home/presentation/widgets/listview_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,7 +41,9 @@ class HomePage extends StatelessWidget {
           children: [
             //Searchfield
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: theme.spaces.space_300),
+              padding: EdgeInsets.symmetric(
+                  horizontal: theme.spaces.space_300,
+                  vertical: theme.spaces.space_50),
               child: Row(
                 children: [
                   Expanded(
@@ -57,7 +61,7 @@ class HomePage extends StatelessWidget {
                                 TextStyle(color: theme.colors.textSubtle),
                             border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.circular(theme.spaces.space_75),
+                                  BorderRadius.circular(theme.spaces.space_100),
                               borderSide: BorderSide(
                                 color: theme.colors.textSubtle,
                                 width: 1,
@@ -65,7 +69,7 @@ class HomePage extends StatelessWidget {
                             ),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(
-                                    theme.spaces.space_75),
+                                    theme.spaces.space_100),
                                 borderSide: BorderSide(
                                     color: theme.colors.textSubtle))),
                       ),
@@ -129,7 +133,31 @@ class HomePage extends StatelessWidget {
             // Listview widget
             Container(
               height: 620,
-              child: ListViewWidget(),
+              child: FutureBuilder(
+                  future: context.watch<PatientProvider>().patientsFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return ListViewWidget(
+                        entity: snapshot.data!,
+                      );
+                    } else if (snapshot.hasError) {
+                      return Center(
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: theme.colors.secondary),
+                          onPressed: () {
+                            context.read<PatientProvider>().getPatient();
+                          },
+                          child: const Text(
+                            'cannot get,Retry',
+                          ),
+                        ),
+                      );
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }),
             ),
           ],
         ),

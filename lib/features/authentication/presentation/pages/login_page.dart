@@ -18,7 +18,7 @@ class LoginPage extends HookWidget {
     final userController = useTextEditingController();
     final passwordController = useTextEditingController();
     final theme = AppTheme.of(context);
-    final appConstants = LoginConstants();
+    final appConstants = LoginConstants(); 
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),

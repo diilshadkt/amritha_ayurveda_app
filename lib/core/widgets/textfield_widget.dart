@@ -22,21 +22,20 @@ class TextFieldWidget extends StatelessWidget {
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-          fillColor: colors.textInverse,
-          filled: true,
-          labelText: labelText,
-          suffixIcon: icon,
-          labelStyle: TextStyle(color: colors.textSubtle),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(
-              color: colors.textInverse,
-              width: 0.1,
+            fillColor: colors.textInverse,
+            filled: true,
+            labelText: labelText,
+            suffixIcon: icon,
+            labelStyle: TextStyle(color: colors.textSubtle),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(space.space_100),
+              borderSide: BorderSide(
+                color: colors.textSubtle,
+              ),
             ),
-            
-          ),
-          
-        ),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(space.space_100),
+                borderSide: BorderSide(color: colors.textSubtle))),
       ),
     );
   }

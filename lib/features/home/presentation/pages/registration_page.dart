@@ -84,16 +84,12 @@ class RegistrationPage extends HookWidget {
                     SubTitleWidget(
                       title: constants.txtLocation,
                     ),
+                    TextFieldWidget(
+                      labelText: constants.txtChooseYourLocation,
+                      controller: locationController,
+                    ),
                     SizedBox(
                       height: theme.spaces.space_100,
-                    ),
-                    TextFieldWidget(
-                      labelText: '',
-                      icon: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.arrow_drop_down),
-                      ),
-                      controller: locationController,
                     ),
                     SizedBox(
                       height: theme.spaces.space_200,

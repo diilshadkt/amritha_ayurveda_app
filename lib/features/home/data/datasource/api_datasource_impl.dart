@@ -4,18 +4,18 @@ import 'package:amrita_ayurvedic_app/features/home/data/datasource/api_datasourc
 import 'package:amrita_ayurvedic_app/features/home/data/model/api_model.dart';
 import 'package:dio/dio.dart';
 
-class ApiDatasourceImpl implements ApiDatasource{
-    final Dio dio = Dio();
-    
-  static const tocken = ApiConstants.token;
+class ApiDatasourceImpl implements ApiDatasource {
+  final Dio dio = Dio();
+
+  static const token = ApiConstants.token;
 
   static const link = ApiConstants.baseUrl;
   static const patientLink = ApiConstants.patientList;
 
   @override
-  Future<List<Patient>> getPatientsData() async{
-      try {
-      dio.options.headers["Authorization"] = tocken;
+  Future<List<Patient>> getPatientsData() async {
+    try {
+      dio.options.headers["Authorization"] = 'Bearer ' + token;
       final response = await dio.get(link + patientLink);
       if (response.statusCode == 200) {
         final data = response.data;
@@ -33,7 +33,4 @@ class ApiDatasourceImpl implements ApiDatasource{
       rethrow;
     }
   }
-  }
-
-  
- 
+}

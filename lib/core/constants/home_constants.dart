@@ -1,13 +1,20 @@
 class HomeConstants {
+  // Home page constants
   final String txtHome = 'Home';
   final String txtSearchField = 'Search for treatment';
   final String txtViewBooking = 'View Booking details';
   final String txtRegister = 'Register Now';
+  final String txtSortby = 'Sort by :';
+  final String txtDate = 'Date';
+  // Register page constants
   final String txtName = 'Name';
   final String txtNumber = 'Whatsapp Number';
   final String txtAddress = 'Address';
   final String txtLocation = 'Location';
+  final String txtChooseYourLocation = "Choose your location";
   final String txtBranch = 'Branch';
+
+  final String txtSelectTheBranch = "Select the branch";
   final String txtTreatment = 'Treatment';
   final String txtTotalAmount = 'Total Amount';
   final String txtDiscountAmount = 'Discount Amount';
@@ -24,7 +31,4 @@ class HomeConstants {
   final String txtPatientDetails = 'Patient Details';
   final String txtTreatmnts = 'Treatments';
   final String txtBranches = 'Branches';
-  final String txtSortby = 'Sort by :';
-  final String txtDate = 'Date';
-
 }

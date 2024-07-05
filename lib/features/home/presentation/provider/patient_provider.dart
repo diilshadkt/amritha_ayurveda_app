@@ -1,4 +1,3 @@
-import 'package:amrita_ayurvedic_app/features/home/data/repository/api_repository_impl.dart';
 import 'package:amrita_ayurvedic_app/features/home/domain/entity/patient_entity.dart';
 import 'package:amrita_ayurvedic_app/features/home/domain/repository/api_repository.dart';
 import 'package:amrita_ayurvedic_app/features/home/domain/usecase/get_patient_usecase.dart';
@@ -6,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 class PatientProvider extends ChangeNotifier {
-  late final Future<List<PatientEntity>> patientsFuture;
+  late Future<List<PatientEntity>> patientsFuture;
 
   PatientProvider() {
     getPatient();
