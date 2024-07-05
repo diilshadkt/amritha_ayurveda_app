@@ -1,4 +1,5 @@
 import 'package:amrita_ayurvedic_app/features/home/data/datasource/api_datasource.dart';
+import 'package:amrita_ayurvedic_app/features/home/domain/entity/branch_entity.dart';
 import 'package:amrita_ayurvedic_app/features/home/domain/entity/patient_entity.dart';
 import 'package:amrita_ayurvedic_app/features/home/domain/repository/api_repository.dart';
 
@@ -43,5 +44,27 @@ class ApiRepositoryImpl implements ApiRepository {
         ),
     ];
     return results;
+  }
+
+  @override
+  Future<List<BranchEntity>> getBranches() async{
+     final data = await datasource.getBranches();
+    late List<BranchEntity> results;
+    results = [
+      for (final result in data)
+        BranchEntity(
+          id: result.id,
+          name: result.name,
+          patientsCount: result.patientsCount,
+          location: result.location,
+          phone: result.phone,
+          mail: result.mail,
+          address: result.address,
+          gst: result.gst,
+          isActive: result.isActive,
+        ),
+    ];
+    return results;
+   
   }
 }
